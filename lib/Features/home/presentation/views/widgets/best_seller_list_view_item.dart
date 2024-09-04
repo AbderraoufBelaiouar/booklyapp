@@ -30,7 +30,7 @@ class BestSellerListViewItem extends StatelessWidget {
               Text(
                 'dkkkc',
                 maxLines: 2,
-                style: Styles.titleMedium,
+                style: Styles.textStyle18,
               ),
               Text("fonder"),
               Row(
@@ -38,10 +38,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 children: [
                   Text(
                     "19.99e",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Styles.textStyle20,
                   ),
                   SizedBox(
                     width: 12,
