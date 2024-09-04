@@ -1,3 +1,4 @@
+import 'package:booklyapp/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:booklyapp/core/utils/styles.dart';
@@ -25,46 +26,43 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: Text(
-                  'hekkmkd,mkvdklvnkkvnkdlvndkvldknvdlvn ',
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Styles.textStyle20.copyWith(fontFamily: KGSectraFine),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    'hekkmkd,mkvdklvnkkvnkdlvndkvldknvdlvn ',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: KGSectraFine),
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              const Text(
-                "fonder",
-                style: Styles.textStyle14,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Text(
-                    "19.99€",
-                    style: Styles.textStyle20
-                        .copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    width: 12,
-                  ),
-                  const Icon(
-                    Icons.star,
-                    color: Colors.yellow,
-                  ),
-                  const Text("4.0(2992)")
-                ],
-              )
-            ],
+                const SizedBox(
+                  height: 4,
+                ),
+                const Text(
+                  "fonder",
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "19.99 €",
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    const BookRating()
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
