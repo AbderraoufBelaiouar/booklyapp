@@ -1,3 +1,4 @@
+import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:booklyapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -25,34 +26,42 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * .5,
-                child: const Text(
-                  'dkkkc',
+                child: Text(
+                  'hekkmkd,mkvdklvnkkvnkdlvndkvldknvdlvn ',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: Styles.textStyle20,
+                  style: Styles.textStyle20.copyWith(fontFamily: KGSectraFine),
                 ),
               ),
-              const Text("fonder"),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              const SizedBox(
+                height: 4,
+              ),
+              const Text(
+                "fonder",
+                style: Styles.textStyle14,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
                 children: [
                   Text(
-                    "19.99e",
-                    style: Styles.textStyle20,
+                    "19.99€",
+                    style: Styles.textStyle20
+                        .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.star,
                     color: Colors.yellow,
                   ),
-                  Text("4.0(2992)")
+                  const Text("4.0(2992)")
                 ],
               )
             ],
