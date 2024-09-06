@@ -1,7 +1,9 @@
 import 'package:booklyapp/Features/home/presentation/views/widgets/book_rating.dart';
+import 'package:booklyapp/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:booklyapp/core/utils/styles.dart';
+import 'package:booklyapp/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -36,49 +38,12 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          //   const BookRating(),
-          //   const SizedBox(
-          //     height: 40,
-          //   ),
-          //   Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       Container(
-          //         alignment: Alignment.center,
-          //         width: MediaQuery.of(context).size.width * .40,
-          //         height: MediaQuery.of(context).size.height / 14,
-          //         decoration: const BoxDecoration(
-          //           color: Colors.white,
-          //           borderRadius: BorderRadius.only(
-          //             topLeft: Radius.circular(20),
-          //             bottomLeft: Radius.circular(20),
-          //           ),
-          //         ),
-          //         child: Text(
-          //           "19.99 €",
-          //           style: Styles.textStyle18.copyWith(
-          //               color: Colors.black, fontWeight: FontWeight.bold),
-          //         ),
-          //       ),
-          //       Container(
-          //         alignment: Alignment.center,
-          //         width: MediaQuery.of(context).size.width * .40,
-          //         height: MediaQuery.of(context).size.height / 14,
-          //         decoration: const BoxDecoration(
-          //           color: Colors.orange,
-          //           borderRadius: BorderRadius.only(
-          //             topRight: Radius.circular(20),
-          //             bottomRight: Radius.circular(20),
-          //           ),
-          //         ),
-          //         child: Text(
-          //           "Free Preview",
-          //           style: Styles.textStyle18.copyWith(
-          //               color: Colors.white, fontWeight: FontWeight.bold),
-          //         ),
-          //       ),
-          //     ],
-          //   ),
+          const BookRating(),
+          const SizedBox(
+            height: 40,
+          ),
+          const BooksAction()
+
           //   const SizedBox(
           //     height: 50,
           //   ),
