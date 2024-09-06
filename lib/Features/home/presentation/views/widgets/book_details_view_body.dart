@@ -1,7 +1,6 @@
 import 'package:booklyapp/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_image.dart';
-import 'package:booklyapp/core/utils/assets.dart';
 import 'package:booklyapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +19,9 @@ class BookDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: width * .17),
             child: const CustomBookImage(),
           ),
+          const SizedBox(
+            height: 20,
+          ),
           const Text(
             "Title",
             style: Styles.textStyle30,
@@ -32,47 +34,82 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.textStyle20.copyWith(color: Colors.grey),
           ),
           const SizedBox(
-            height: 8,
+            height: 16,
           ),
-          const BookRating(),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * .3,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    bottomLeft: Radius.circular(20),
-                  ),
-                ),
-                child: const Text(
-                  "19.99e",
-                  style: Styles.textStyle20,
-                ),
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width * .3,
-                decoration: const BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    bottomRight: Radius.circular(20),
-                  ),
-                ),
-                child: const Text(
-                  "Free Premium",
-                  style: Styles.textStyle20,
-                ),
-              )
-            ],
-          ),
+          //   const BookRating(),
+          //   const SizedBox(
+          //     height: 40,
+          //   ),
+          //   Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       Container(
+          //         alignment: Alignment.center,
+          //         width: MediaQuery.of(context).size.width * .40,
+          //         height: MediaQuery.of(context).size.height / 14,
+          //         decoration: const BoxDecoration(
+          //           color: Colors.white,
+          //           borderRadius: BorderRadius.only(
+          //             topLeft: Radius.circular(20),
+          //             bottomLeft: Radius.circular(20),
+          //           ),
+          //         ),
+          //         child: Text(
+          //           "19.99 €",
+          //           style: Styles.textStyle18.copyWith(
+          //               color: Colors.black, fontWeight: FontWeight.bold),
+          //         ),
+          //       ),
+          //       Container(
+          //         alignment: Alignment.center,
+          //         width: MediaQuery.of(context).size.width * .40,
+          //         height: MediaQuery.of(context).size.height / 14,
+          //         decoration: const BoxDecoration(
+          //           color: Colors.orange,
+          //           borderRadius: BorderRadius.only(
+          //             topRight: Radius.circular(20),
+          //             bottomRight: Radius.circular(20),
+          //           ),
+          //         ),
+          //         child: Text(
+          //           "Free Preview",
+          //           style: Styles.textStyle18.copyWith(
+          //               color: Colors.white, fontWeight: FontWeight.bold),
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          //   const SizedBox(
+          //     height: 50,
+          //   ),
+          //   const Text(
+          //     "You can also like ",
+          //     style: Styles.textStyle18,
+          //   ),
+          //   const SizedBox(
+          //     height: 10,
+          //   ),
+          //   const AuthersBooksListView(),
+          // ],
         ],
       ),
     );
   }
 }
+
+// class AuthersBooksListView extends StatelessWidget {
+//   const AuthersBooksListView({
+//     super.key,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Expanded(
+//       child: ListView.builder(
+//         scrollDirection: Axis.horizontal,
+//         itemBuilder: (context, index) => const CustomBookImage(),
+//         itemCount: 10,
+//       ),
+//     );
+//   }
+// }
