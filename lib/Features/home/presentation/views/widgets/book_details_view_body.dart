@@ -1,10 +1,6 @@
-import 'package:booklyapp/Features/home/presentation/views/widgets/book_rating.dart';
-import 'package:booklyapp/Features/home/presentation/views/widgets/books_action.dart';
+import 'package:booklyapp/Features/home/presentation/views/widgets/books_details_section.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
-import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_image.dart';
-import 'package:booklyapp/Features/home/presentation/views/widgets/similar_books_list_view.dart';
-import 'package:booklyapp/core/utils/styles.dart';
-import 'package:booklyapp/core/widgets/custom_button.dart';
+import 'package:booklyapp/Features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -12,52 +8,24 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-      child: Column(
-        children: [
-          const CustomBookDetailsAppBar(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .17),
-            child: const CustomBookImage(),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            "Title",
-            style: Styles.textStyle30,
-          ),
-          const SizedBox(
-            height: 4,
-          ),
-          Text(
-            "Sub Title",
-            style: Styles.textStyle20.copyWith(color: Colors.grey),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const BookRating(),
-          const SizedBox(
-            height: 40,
-          ),
-          const BooksAction(),
-          const SizedBox(
-            height: 50,
-          ),
-          const Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "You can also like ",
-              style: Styles.textStyle18,
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            child: Column(
+              children: [
+                CustomBookDetailsAppBar(),
+                BooksDetailsSection(),
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                  ),
+                ),
+                SimilarBooksSection()
+              ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          const SimilarBooksListView(),
         ],
       ),
     );
