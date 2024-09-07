@@ -20,13 +20,16 @@ class HomeReposImpl implements HomeRepo {
         booksList.add(BookModel.fromJson(item));
       }
       return right(booksList);
-    } on Exception catch (e) {
-      return left(ServerFailure());
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
-    apiService.get(endPoint: endPoint);
+    // apiService.get(endPoint: endPoint);
   }
 }
