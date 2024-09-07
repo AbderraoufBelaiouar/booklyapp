@@ -7,20 +7,20 @@ class SimilarBooksSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Text(
-          "You can also like ",
-          style: Styles.textStyle18,
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        SimilarBooksListView(),
-        SizedBox(
-          height: 40,
-        ),
-      ],
+    return const Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "You can also like ",
+            style: Styles.textStyle18,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          SimilarBooksListView(),
+        ],
+      ),
     );
   }
 }
