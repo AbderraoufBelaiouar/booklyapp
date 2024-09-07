@@ -2,6 +2,7 @@ import 'package:booklyapp/Features/home/presentation/views/widgets/book_rating.d
 import 'package:booklyapp/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:booklyapp/Features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:booklyapp/core/utils/styles.dart';
 import 'package:booklyapp/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -42,39 +43,23 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          const BooksAction()
-
-          //   const SizedBox(
-          //     height: 50,
-          //   ),
-          //   const Text(
-          //     "You can also like ",
-          //     style: Styles.textStyle18,
-          //   ),
-          //   const SizedBox(
-          //     height: 10,
-          //   ),
-          //   const AuthersBooksListView(),
-          // ],
+          const BooksAction(),
+          const SizedBox(
+            height: 50,
+          ),
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "You can also like ",
+              style: Styles.textStyle18,
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const SimilarBooksListView(),
         ],
       ),
     );
   }
 }
-
-// class AuthersBooksListView extends StatelessWidget {
-//   const AuthersBooksListView({
-//     super.key,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Expanded(
-//       child: ListView.builder(
-//         scrollDirection: Axis.horizontal,
-//         itemBuilder: (context, index) => const CustomBookImage(),
-//         itemCount: 10,
-//       ),
-//     );
-//   }
-// }
