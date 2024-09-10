@@ -5,6 +5,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.4.4 <4.0.0'
 dependencies:
+  cached_network_image: ^3.4.1
   cloud_firestore: ^4.6.0
   cloud_functions: ^4.2.0
   cupertino_icons: ^1.0.6
