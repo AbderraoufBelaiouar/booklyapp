@@ -1,5 +1,4 @@
-
-import 'package:booklyapp/Features/home/data/models/book/book.dart';
+import 'package:booklyapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:booklyapp/Features/home/data/repos/home_repos.dart';
 import 'package:booklyapp/core/errors/failures.dart';
 import 'package:booklyapp/core/utils/api_service.dart';
@@ -10,15 +9,15 @@ class HomeReposImpl implements HomeRepo {
   final ApiService apiService;
   HomeReposImpl(this.apiService);
   @override
-  Future<Either<Failure, List<Book>>> fetchNewestBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await apiService.get(
           endPoint:
               'volumes?Filtering=free-ebooks&q=subject:programming&sorting=newest');
 
-      List<Book> booksList = [];
+      List<BookModel> booksList = [];
       for (var item in data['item']) {
-        booksList.add(Book.fromJson(item));
+        booksList.add(BookModel.fromJson(item));
       }
       return right(booksList);
     } catch (e) {
@@ -30,14 +29,14 @@ class HomeReposImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<Book>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
           endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
 
-      List<Book> booksList = [];
+      List<BookModel> booksList = [];
       for (var item in data['items']) {
-        booksList.add(Book.fromMap(item));
+        booksList.add(BookModel.fromMap(item));
       }
       return right(booksList);
     } catch (e) {

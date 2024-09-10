@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:booklyapp/Features/home/data/models/book/book.dart';
+import 'package:booklyapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {

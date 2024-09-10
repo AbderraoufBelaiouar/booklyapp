@@ -11,7 +11,9 @@ class SimilarBooksListView extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const CustomBookImage(),
+        itemBuilder: (context, index) => const CustomBookImage(
+          imageUrl: '',
+        ),
         itemCount: 10,
       ),
     );
