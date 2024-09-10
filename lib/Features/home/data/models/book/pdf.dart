@@ -4,15 +4,18 @@ import 'package:equatable/equatable.dart';
 
 class Pdf extends Equatable {
   final bool? isAvailable;
+  final String? acsTokenLink;
 
-  const Pdf({this.isAvailable});
+  const Pdf({this.isAvailable, this.acsTokenLink});
 
   factory Pdf.fromMap(Map<String, dynamic> data) => Pdf(
         isAvailable: data['isAvailable'] as bool?,
+        acsTokenLink: data['acsTokenLink'] as String?,
       );
 
   Map<String, dynamic> toMap() => {
         'isAvailable': isAvailable,
+        'acsTokenLink': acsTokenLink,
       };
 
   /// `dart:convert`
@@ -28,5 +31,5 @@ class Pdf extends Equatable {
   String toJson() => json.encode(toMap());
 
   @override
-  List<Object?> get props => [isAvailable];
+  List<Object?> get props => [isAvailable, acsTokenLink];
 }

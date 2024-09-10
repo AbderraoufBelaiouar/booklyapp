@@ -9,7 +9,9 @@ import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
   final String? title;
+  final String? subtitle;
   final List<String>? authors;
+  final String? publisher;
   final String? publishedDate;
   final String? description;
   final List<IndustryIdentifier>? industryIdentifiers;
@@ -29,7 +31,9 @@ class VolumeInfo extends Equatable {
 
   const VolumeInfo({
     this.title,
+    this.subtitle,
     this.authors,
+    this.publisher,
     this.publishedDate,
     this.description,
     this.industryIdentifiers,
@@ -48,40 +52,45 @@ class VolumeInfo extends Equatable {
     this.canonicalVolumeLink,
   });
 
-  factory VolumeInfo.fromMap(Map<String, dynamic> data) => VolumeInfo(
-        title: data['title'] as String?,
-        authors: data['authors'] as List<String>?,
-        publishedDate: data['publishedDate'] as String?,
-        description: data['description'] as String?,
-        industryIdentifiers: (data['industryIdentifiers'] as List<dynamic>?)
-            ?.map((e) => IndustryIdentifier.fromMap(e as Map<String, dynamic>))
-            .toList(),
-        readingModes: data['readingModes'] == null
-            ? null
-            : ReadingModes.fromMap(
-                data['readingModes'] as Map<String, dynamic>),
-        pageCount: data['pageCount'] as int?,
-        printType: data['printType'] as String?,
-        categories: data['categories'] as List<String>?,
-        maturityRating: data['maturityRating'] as String?,
-        allowAnonLogging: data['allowAnonLogging'] as bool?,
-        contentVersion: data['contentVersion'] as String?,
-        panelizationSummary: data['panelizationSummary'] == null
-            ? null
-            : PanelizationSummary.fromMap(
-                data['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: data['imageLinks'] == null
-            ? null
-            : ImageLinks.fromMap(data['imageLinks'] as Map<String, dynamic>),
-        language: data['language'] as String?,
-        previewLink: data['previewLink'] as String?,
-        infoLink: data['infoLink'] as String?,
-        canonicalVolumeLink: data['canonicalVolumeLink'] as String?,
-      );
+  factory VolumeInfo.fromMap(Map<String, dynamic> data) {
+    return VolumeInfo(
+      title: data['title'] as String?,
+      subtitle: data['subtitle'] as String?,
+      authors: List<String>.from(data['authors']),
+      publisher: data['publisher'] as String?,
+      publishedDate: data['publishedDate'] as String?,
+      description: data['description'] as String?,
+      industryIdentifiers: (data['industryIdentifiers'] as List<dynamic>?)
+          ?.map((e) => IndustryIdentifier.fromMap(e as Map<String, dynamic>))
+          .toList(),
+      readingModes: data['readingModes'] == null
+          ? null
+          : ReadingModes.fromMap(data['readingModes'] as Map<String, dynamic>),
+      pageCount: data['pageCount'] as int?,
+      printType: data['printType'] as String?,
+      categories: List<String>.from(data['categories']),
+      maturityRating: data['maturityRating'] as String?,
+      allowAnonLogging: data['allowAnonLogging'] as bool?,
+      contentVersion: data['contentVersion'] as String?,
+      panelizationSummary: data['panelizationSummary'] == null
+          ? null
+          : PanelizationSummary.fromMap(
+              data['panelizationSummary'] as Map<String, dynamic>),
+      imageLinks: data['imageLinks'] == null
+          ? null
+          : ImageLinks.fromMap(data['imageLinks'] as Map<String, dynamic>),
+      language: data['language'] as String?,
+      previewLink: data['previewLink'] as String?,
+      infoLink: data['infoLink'] as String?,
+      canonicalVolumeLink: data['canonicalVolumeLink'] as String?,
+    );
+  }
 
   Map<String, dynamic> toMap() => {
         'title': title,
+        'subtitle': subtitle,
         'authors': authors,
+        'publisher': publisher,
         'publishedDate': publishedDate,
         'description': description,
         'industryIdentifiers':
@@ -117,7 +126,9 @@ class VolumeInfo extends Equatable {
   List<Object?> get props {
     return [
       title,
+      subtitle,
       authors,
+      publisher,
       publishedDate,
       description,
       industryIdentifiers,

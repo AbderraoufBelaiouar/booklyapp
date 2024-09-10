@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:booklyapp/Features/home/data/models/book/book.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {
@@ -6,6 +9,7 @@ class ApiService {
   ApiService(this.dio);
   Future<Map<String, dynamic>> get({required String endPoint}) async {
     var response = await dio.get('$_baseUrl$endPoint');
+
     return response.data;
   }
 }

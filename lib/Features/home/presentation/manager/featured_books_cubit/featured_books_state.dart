@@ -1,11 +1,11 @@
-import 'package:booklyapp/Features/home/data/models/book_model/book_model.dart';
+import 'package:booklyapp/Features/home/data/models/book/book.dart';
 
 abstract class FeaturedBooksState {}
 
 class InitialState extends FeaturedBooksState {}
 
 class FeaturedBooksSuccess extends FeaturedBooksState {
-  final List<BookModel> books;
+  final List<Book> books;
   FeaturedBooksSuccess(this.books);
 }
 
