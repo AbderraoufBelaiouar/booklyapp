@@ -68,7 +68,8 @@ class VolumeInfo extends Equatable {
           : ReadingModes.fromMap(data['readingModes'] as Map<String, dynamic>),
       pageCount: data['pageCount'] as int?,
       printType: data['printType'] as String?,
-      categories: List<String>.from(data['categories']),
+      categories: List<String>.from(
+          data['categories'] == null ? [] : data['categories']),
       maturityRating: data['maturityRating'] as String?,
       allowAnonLogging: data['allowAnonLogging'] as bool?,
       contentVersion: data['contentVersion'] as String?,
