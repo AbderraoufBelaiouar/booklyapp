@@ -1,3 +1,4 @@
+import 'package:booklyapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_image.dart';
@@ -5,8 +6,8 @@ import 'package:booklyapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
-
+  const BooksDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -14,22 +15,24 @@ class BooksDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const CustomBookImage(
-            imageUrl: '',
+          child: CustomBookImage(
+            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
           ),
         ),
         const SizedBox(
           height: 20,
         ),
-        const Text(
-          "Title",
+        Text(
+          bookModel.volumeInfo.title!,
+          textAlign: TextAlign.center,
           style: Styles.textStyle30,
         ),
         const SizedBox(
           height: 4,
         ),
         Text(
-          "Sub Title",
+          bookModel.volumeInfo.authors?[0] ?? "",
+          textAlign: TextAlign.center,
           style: Styles.textStyle20.copyWith(color: Colors.grey),
         ),
         const SizedBox(
