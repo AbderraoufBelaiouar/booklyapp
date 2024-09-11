@@ -9,7 +9,7 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemCount: 10,
-      itemBuilder: (context, index) => const BestSellerListViewItem(),
+      itemBuilder: (context, index) => Container(),
     );
   }
 }
