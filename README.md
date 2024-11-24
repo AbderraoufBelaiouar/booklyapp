@@ -22,7 +22,7 @@ A sleek mobile application to explore books using the Google Books API. Built wi
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/bookly.git
+   git clone https://github.com/AbderraoufBelaiouar/booklyapp.git
 2. run the project
    ```bash
    flutter pub get
