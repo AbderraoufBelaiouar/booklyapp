@@ -13,6 +13,14 @@ A sleek mobile application to explore books using the Google Books API. Built wi
 - **Networking**: `dio` package.
 - **API Integration**: Google Books API.
 - **Language**: Dart (Flutter framework).
+## Screenshots
+
+<p align="center">
+  <img src="./screenshots/spalsh.jpg" alt="Splash Screen" width="24%" />
+  <img src="./screenshots/home.jpg" alt="Home Screen" width="24%" />
+  <img src="./screenshots/searchbooks.jpg" alt="Search Screen" width="24%" />
+  <img src="./screenshots/bookDetails.jpg" alt="Book Details" width="24%" />
+</p>
 
 ## Getting Started
 ### Prerequisites
